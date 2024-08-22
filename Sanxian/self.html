@@ -1,60 +1,78 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="x-icon" href="dog.jpg"/>
     <title>自介 - Personal Introduction</title>
+    <link rel="shortcut icon" type="image/x-icon" href="dog.jpg" />
     <style>
-        /* Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
         body {
-            background-color: #083149;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #0d3b66;
             background-image: url('bg.gif');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
             font-family: "Futura-pt", sans-serif;
-            color: #ffffff;
+            color: #eaeaea;
             margin: 0;
             padding: 0;
+            line-height: 1.8;
         }
+
         header {
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
         }
+
         nav {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+            display: inline-block;
         }
-        header a {
-            color: #18bac0;
+
+        nav a {
+            color: #f4d35e;
+            background-color: transparent;
+            border: 2px solid #f4d35e;
             text-decoration: none;
             font-size: 18px;
-            padding: 10px 15px;
-            transition: color 0.3s, background-color 0.3s;
-            border-radius: 5px;
+            margin: 0 12px;
+            padding: 10px 18px;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
         }
-        header a:hover {
-            color: #ffffff;
-            background-color: #137a84;
+
+        nav a:hover {
+            background-color: #f4d35e;
+            color: #0d3b66;
+            transform: translateY(-3px);
         }
-        hr {
-            border: none;
-            border-top: 2px solid #18bac0;
-            margin: 20px 0;
-        }
-        .container {
+
+        .content {
+            flex: 1;
+            margin-top: 150px;
             max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
+            margin: 150px auto 50px;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
             text-align: center;
+            font-size: 36px;
+            color: #fff;
+            margin-bottom: 50px;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
         }
         img {
             max-width: 200px;
@@ -63,39 +81,92 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             margin: 20px 0;
         }
-        h1 {
-            color: #d3d3e0;
-            font-size: 36px;
-            margin: 20px 0;
-        }
-        .content {
+
+        .card {
             background-color: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-            text-align: left;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+            margin-bottom: 40px;
+            transition: transform 0.3s ease;
         }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
         h3 {
-            color: #d3d3e0;
+            color: #f4d35e;
             font-size: 20px;
             line-height: 1.6;
             margin-bottom: 20px;
         }
-        footer {
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #ffffff;
-            padding: 15px 0;
-            text-align: center;
-            margin-top: 40px;
+        
+
+        p, li {
+            font-size: 18px;
+            color: #f0f0f0;
+            margin-bottom: 20px;
         }
-        footer p {
-            margin: 5px 0;
-            font-size: 14px;
+
+        pre {
+            background-color: #051b2b;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 16px;
+            color: #eaeaea;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+            overflow-x: auto;
+        }
+
+        hr {
+            border: 1px solid #f4d35e;
+            margin: 50px 0;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #f4d35e;
+            font-size: 16px;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        footer a {
+            color: #f4d35e;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2.2em;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .content {
+                margin: 20px;
+            }
+
+            .card {
+                margin-bottom: 30px;
+            }
         }
     </style>
 </head>
-<body>
 
+<body>
     <header>
         <nav>
             <a href="home.html">首頁</a>
@@ -107,20 +178,29 @@
         </nav>
     </header>
 
-    <div class="container">
-        <img src="de.jpg" alt="自介圖片">
+    <main class="content">
         <h1>自介</h1>
-        <div class="content">
-            <h3>高一開始接觸程式設計這個領域，對還是小白的我來說，根本是跳脫一個層次。一開始學程式時，我只是照著課本打出第一個程式，Hello world！</h3>
-            <h3>當時我還不知道它的運行方式是甚麼。經過二個學期的磨練，我竟然開始教別人認識程式以及學習進階的語法。</h3>
-            <h3>我也認識到自己在理解題目方面的能力不足，因此我會主動找一些題目來學習，並且會分享自己的程式設計心得。</h3>
-            <h3>設計這個網頁是為了讓自己能往更好的方向發展，希望能藉由分享程式設計的心得，讓更多人能學習到相關技巧，並且成為更好的工程師。</h3>
+        <div class="container">
+            <img src="de.jpg" alt="自介圖片">
+            
+            <div class="content">
+                <h3>高一開始接觸程式設計這個領域，對還是小白的我來說，根本是跳脫一個層次。一開始學程式時，我只是照著課本打出第一個程式，Hello world！</h3>
+                <h3>當時我還不知道它的運行方式是甚麼。經過二個學期的磨練，我竟然開始教別人認識程式以及學習進階的語法。</h3>
+                <h3>我也認識到自己在理解題目方面的能力不足，因此我會主動找一些題目來學習，並且會分享自己的程式設計心得。</h3>
+                <h3>設計這個網頁是為了讓自己能往更好的方向發展，希望能藉由分享程式設計的心得，讓更多人能學習到相關技巧，並且成為更好的工程師。</h3>
+            </div>
         </div>
-    </div>
+
+        <!-- 其他卡片 -->
+    </main>
 
     <footer>
-        &copy; 2024 胡鑠沅Sanxian | 聯絡: a0973369873@gmail.com
+        <p>&copy; 2024 Sanxian . 保留所有權利.</p>
+        <p>
+            <a href="https://github.com/ban38">MY GitHub</a> |
+            <a href="https://www.instagram.com/11_taiyi/?hl=zh-tw">Follow IG @11.taiyi</a>
+        </p>
     </footer>
-
 </body>
+
 </html>

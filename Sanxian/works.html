@@ -1,82 +1,144 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>作品集</title>
-    <link rel="shortcut icon" type="image/x-icon" href="dog.jpg"/>
+    <title>C++解題</title>
+    <link rel="shortcut icon" type="image/x-icon" href="dog.jpg" />
     <style>
         body {
-            background-color: #083149;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #0d3b66;
             background-image: url('bg.gif');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
-            font-family: "futura-pt", sans-serif;
+            font-family: "Futura-pt", sans-serif;
+            color: #eaeaea;
             margin: 0;
             padding: 0;
-            color: #d3d3e0;
-            line-height: 1.5;
+            line-height: 1.8;
         }
 
         header {
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 20px 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
         }
 
         nav {
-            margin: 0 auto;
             display: inline-block;
         }
 
         nav a {
-            color: #fff;
+            color: #f4d35e;
+            background-color: transparent;
+            border: 2px solid #f4d35e;
             text-decoration: none;
             font-size: 18px;
-            margin: 0 15px;
-            padding: 10px 20px;
-            background-color: #18bac0;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            margin: 0 12px;
+            padding: 10px 18px;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
         }
 
         nav a:hover {
-            background-color: #137a84;
+            background-color: #f4d35e;
+            color: #0d3b66;
+            transform: translateY(-3px);
+        }
+
+        .content {
+            flex: 1;
+            margin-top: 150px;
+            max-width: 900px;
+            margin: 150px auto 50px;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
         }
 
         h1 {
             text-align: center;
-            font-size: 2.5em;
-            margin-top: 50px;
+            font-size: 3em;
             color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            margin-bottom: 50px;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
         }
 
-        section {
-            max-width: 800px;
-            margin: 50px auto;
+        .card {
             background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+            margin-bottom: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        h3 {
+            color: #f4d35e;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        p, li {
+            font-size: 18px;
+            color: #f0f0f0;
+            margin-bottom: 20px;
+        }
+
+        pre {
+            background-color: #051b2b;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-            text-align: center;
+            font-size: 16px;
+            color: #eaeaea;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+            overflow-x: auto;
+        }
+
+        hr {
+            border: 1px solid #f4d35e;
+            margin: 50px 0;
         }
 
         footer {
-            text-align: center;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #f4d35e;
+            font-size: 16px;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            position: fixed;
+            text-align: center;
             width: 100%;
-            bottom: 0;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        footer a {
+            color: #f4d35e;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
         }
 
         @media screen and (max-width: 768px) {
             h1 {
-                font-size: 1.8em;
+                font-size: 2.2em;
             }
 
             nav a {
@@ -84,37 +146,49 @@
                 margin: 10px 0;
             }
 
-            section {
+            .content {
                 margin: 20px;
+            }
+
+            .card {
+                margin-bottom: 30px;
             }
         }
     </style>
 </head>
+
 <body>
+    <header>
+        <nav>
+            <a href="home.html">首頁</a>
+            <a href="self.html">自介</a>
+            <a href="C++.html">C++解題</a>
+            <a href="skills.html">技能</a>
+            <a href="works.html">作品集</a>
+            <a href="contact.html">聯絡</a>
+        </nav>
+    </header>
 
-<header>
-    <nav>
-        <a href="home.html">首頁</a>
-        <a href="self.html">自介</a>
-        <a href="C++.html">C++解題</a>
-        <a href="skills.html">技能</a>
-        <a href="works.html">作品集</a>
-        <a href="contact.html">聯絡</a>
-    </nav>
-</header>
+    <main class="content">
+        <h1>作品集</h1>
 
-<main>
-    <h1>作品集</h1>
+        <div class="card">
+            <h3>歡迎瀏覽我的作品集！</h3>
+        
+            <p>這裡展示了我各種項目的匯集，從程式設計到設計技能，這裡都涵蓋了。</p>
+            
+        </div>
 
-    <section>
-        <h3>歡迎瀏覽我的作品集！</h3>
-        <p>這裡展示了我各種項目的匯集，從程式設計到設計技能，這裡都涵蓋了。</p>
-    </section>
-</main>
+        <!-- 其他卡片 -->
+    </main>
 
-<footer>
-    &copy; 2024 胡鑠沅Sanxian | 聯絡: a0973369873@gmail.com
-</footer>
-
+    <footer>
+        <p>&copy; 2024 Sanxian . 保留所有權利.</p>
+        <p>
+            <a href="https://github.com/ban38">MY GitHub</a> |
+            <a href="https://www.instagram.com/11_taiyi/?hl=zh-tw">Follow IG @11.taiyi</a>
+        </p>
+    </footer>
 </body>
+
 </html>
