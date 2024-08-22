@@ -139,27 +139,32 @@
             <h3>1. 輸入一個數字，判斷是否為質數。</h3>
             <p>這個程式碼會先讓使用者輸入一個數字，然後判斷是否為質數。判斷質數的過程是，先將數字除以2到數字的平方根，如果有餘數，則為非質數。如果沒有餘數，則為質數。</p>
             <pre>
-#include &lt;iostream&gt;
-using namespace std;
-
-int main() {
-    int num;
-    cout &lt;&lt; "Enter a number: ";
-    cin &gt;&gt; num;
-    bool prime = true;
-    for (int i = 2; i &lt; num; i++) {
-        if (num % i == 0) {
-            prime = false;
-            break;
-        }
-    }
-    if (prime) {
-        cout &lt;&lt; num &lt;&lt; " is a prime number." &lt;&lt; endl;
-    } else {
-        cout &lt;&lt; num &lt;&lt; " is not a prime number." &lt;&lt; endl;
-    }
-    return 0;
-}
+                #include &lt;iostream&gt;
+                using namespace std;
+                int main() 
+                {
+                    int num;
+                    cout &lt;&lt; "Enter a number: ";
+                    cin &gt;&gt; num;
+                    bool prime = true;
+                    for (int i = 2; i &lt; num; i++) 
+                    {
+                        if (num % i == 0) 
+                        {
+                            prime = false;
+                            break;
+                        }
+                    }
+                    if (prime) 
+                    {
+                        cout &lt;&lt; num &lt;&lt; " is a prime number." &lt;&lt; endl;
+                    } 
+                    else 
+                    {
+                        cout &lt;&lt; num &lt;&lt; " is not a prime number." &lt;&lt; endl;
+                    }
+                    return 0;
+                }
             </pre>
         </div>
 
@@ -167,20 +172,24 @@ int main() {
             <h3>2. 輸入一個數字，判斷是否為負數。</h3>
             <p>這個程式碼會先讓使用者輸入一個數字，然後判斷是否為負數。判斷負數的過程是，只要數字小於0，就表示為負數。</p>
             <pre>
-#include &lt;iostream&gt;
-using namespace std;
+                #include &lt;iostream&gt;
+                using namespace std;
 
-int main() {
-    int num;
-    cout &lt;&lt; "Enter a number: ";
-    cin &gt;&gt; num;
-    if (num &lt; 0) {
-        cout &lt;&lt; num &lt;&lt; " is a negative number." &lt;&lt; endl;
-    } else {
-        cout &lt;&lt; num &lt;&lt; " is not a negative number." &lt;&lt; endl;
-    }
-    return 0;
-}
+                int main() 
+                {
+                    int num;
+                    cout &lt;&lt; "Enter a number: ";
+                    cin &gt;&gt; num;
+                    if (num &lt; 0)
+                    {
+                        cout &lt;&lt; num &lt;&lt; " is a negative number." &lt;&lt; endl;
+                    } 
+                    else 
+                    {
+                        cout &lt;&lt; num &lt;&lt; " is not a negative number." &lt;&lt; endl;
+                    }
+                    return 0;
+                }
             </pre>
         </div>
 
@@ -188,20 +197,24 @@ int main() {
             <h3>3. 輸入一個數字，判斷是否為奇數。</h3>
             <p>這個程式碼會先讓使用者輸入一個數字，然後判斷是否為奇數。判斷奇數的過程是，只要數字除以2餘1，就表示為奇數。</p>
             <pre>
-#include &lt;iostream&gt;
-using namespace std;
+                #include &lt;iostream&gt;
+                using namespace std;
 
-int main() {
-    int num;
-    cout &lt;&lt; "Enter a number: ";
-    cin &gt;&gt; num;
-    if (num % 2 == 1) {
-        cout &lt;&lt; num &lt;&lt; " is an odd number." &lt;&lt; endl;
-    } else {
-        cout &lt;&lt; num &lt;&lt; " is an even number." &lt;&lt; endl;
-    }
-    return 0;
-}
+                int main() 
+                {
+                    int num;
+                    cout &lt;&lt; "Enter a number: ";
+                    cin &gt;&gt; num;
+                    if (num % 2 == 1) 
+                    {
+                        cout &lt;&lt; num &lt;&lt; " is an odd number." &lt;&lt; endl;
+                    } 
+                    else 
+                    {
+                        cout &lt;&lt; num &lt;&lt; " is an even number." &lt;&lt; endl;
+                    }
+                    return 0;
+                }
             </pre>
         </div>
 
@@ -209,17 +222,18 @@ int main() {
             <h3>4. 輸入兩個數字，計算其乘積。</h3>
             <p>這個程式碼會先讓使用者輸入兩個數字，然後計算其乘積。計算乘積的過程是，將兩個數字相乘。</p>
             <pre>
-#include &lt;iostream&gt;
-using namespace std;
+                #include &lt;iostream&gt;
+                using namespace std;
 
-int main() {
-    int num1, num2;
-    cout &lt;&lt; "Enter two numbers: ";
-    cin &gt;&gt; num1 &gt;&gt; num2;
-    int product = num1 * num2;
-    cout &lt;&lt; "The product of " &lt;&lt; num1 &lt;&lt; " and " &lt;&lt; num2 &lt;&lt; " is " &lt;&lt; product &lt;&lt; "." &lt;&lt; endl;
-    return 0;
-}
+                int main() 
+                {
+                    int num1, num2;
+                    cout &lt;&lt; "Enter two numbers: ";
+                    cin &gt;&gt; num1 &gt;&gt; num2;
+                    int product = num1 * num2;
+                    cout &lt;&lt; "The product of " &lt;&lt; num1 &lt;&lt; " and " &lt;&lt; num2 &lt;&lt; " is " &lt;&lt; product &lt;&lt; "." &lt;&lt; endl;
+                    return 0;
+                }
             </pre>
         </div>
 
@@ -227,18 +241,19 @@ int main() {
             <h3>5. 輸入一個數字，計算其平方根。</h3>
             <p>這個程式碼會先讓使用者輸入一個數字，然後計算其平方根。計算平方根的過程是，使用cmath中的sqrt()函數。</p>
             <pre>
-#include &lt;iostream&gt;
-#include &lt;cmath&gt;
-using namespace std;
+                #include &lt;iostream&gt;
+                #include &lt;cmath&gt;
+                using namespace std;
 
-int main() {
-    int num;
-    cout &lt;&lt; "Enter a number: ";
-    cin &gt;&gt; num;
-    double sqrt_num = sqrt(num);
-    cout &lt;&lt; "The square root of " &lt;&lt; num &lt;&lt; " is " &lt;&lt; sqrt_num &lt;&lt; "." &lt;&lt; endl;
-    return 0;
-}
+                int main() 
+                {
+                    int num;
+                    cout &lt;&lt; "Enter a number: ";
+                    cin &gt;&gt; num;
+                    double sqrt_num = sqrt(num);
+                    cout &lt;&lt; "The square root of " &lt;&lt; num &lt;&lt; " is " &lt;&lt; sqrt_num &lt;&lt; "." &lt;&lt; endl;
+                    return 0;
+                }
             </pre>
         </div>
 
