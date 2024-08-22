@@ -1,323 +1,257 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>C++解題</title>
+<html lang="zh-TW">
 
-        <meta charset="UTF-8">
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" type="x-icon" href="dog.jpg"/>
-
-        
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++解題</title>
+    <link rel="shortcut icon" type="image/x-icon" href="dog.jpg" />
     <style>
         body {
-            background-color: #083149;
-            font-family: "futura-pt", sans-serif;
-            font-size: 16px;
-            line-height: 1.5;
-            margin: 0;
-            padding: 0;
-        }
-        h3,h1 {
-            color: rgb(211, 211, 224);
-            margin-left: 10px;
-            font-size: 20px;
-        }
-        p, li {
-            color: rgb(255, 255, 255);
-            margin-left: 20px;
-            text-align: center;
-            font-size: 20px;
-            list-style-type: none;
-            font-family: "futura-pt", sans-serif;
-        }
-        a {
-            color: rgb(255, 255, 255);
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        body{
+            background-color: #0a5891;
             background-image: url('bg.gif');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
+            font-family: "Futura-pt", sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
         }
-        li {
-            color: rgb(24, 186, 192);
-            margin-left: 20px;
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px 0;
             text-align: center;
-            font-size: 30px;
-            list-style-type: none;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
         }
-        a {
-            color: rgb(17, 13, 56);
+
+        header nav {
+            display: inline-block;
+        }
+
+        header nav a {
+            color: #18bac0;
             text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
         }
-        pre{
-            color:rgb(43, 159, 226)
-             
+
+        header nav a:hover {
+            color: #ffffff;
         }
-        a:hover {
-            text-decoration: underline;
+
+        .content {
+            margin-top: 100px;
+            padding: 20px;
         }
-        
+
+        h1 {
+            color: #ffffff;
+            font-size: 36px;
+            text-align: center;
+            text-shadow: 2px 2px 5px #000000;
+            margin-bottom: 40px;
+        }
+
+        h3 {
+            color: #ffffff;
+            font-size: 28px;
+            text-shadow: 1px 1px 3px #000000;
+            margin: 20px 0;
+            padding-left: 15px;
+        }
+
+        p,
+        li {
+            color: #ffffff;
+            margin: 10px 30px;
+            font-size: 20px;
+            text-shadow: 1px 1px 2px #000000;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        pre {
+            background-color: #043b3f;
+            padding: 15px;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-size: 18px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            color: #f1f1f1;
+            margin: 20px 0;
+        }
+
+        hr {
+            border: 1px solid #18bac0;
+            margin: 40px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #18bac0;
+            font-size: 16px;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #18bac0;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
     </style>
-    <body>
-        <p>
-            <a href="home.html">首頁</a> || <a href="self.html">自介</a>  ||  <a href="C++.html">C++解題</a> || <a href="skills.html">技能</a> || <a href="works.html">作品集</a> || <a href="contact.html">聯絡</a>
-        </p>
-        <hr>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="home.html">首頁</a>
+            <a href="self.html">自介</a>
+            <a href="C++.html">C++解題</a>
+            <a href="skills.html">技能</a>
+            <a href="works.html">作品集</a>
+            <a href="contact.html">聯絡</a>
+        </nav>
+    </header>
+
+    <div class="content">
         <h1>C++解題</h1>
-        <h3>1. 輸入一個數字，判斷是否為質數。</h3>
-        <p>
-            程式碼如下：
-        </p>
-        <pre>
-            #include &lt;iostream&gt;
-            using namespace std;
-            int main() {
-                int num;
-                cout << "Enter a number: ";
-                cin >> num;
-                bool prime = true;
-                for (int i = 2; i &lt; num; i++) {
-                    if (num % i == 0) {
-                        prime = false;
-                        break;
-                    }
-                }
-                if (prime) {
-                    cout << num << " is a prime number." << endl;
-                } else {
-                    cout << num << " is not a prime number." << endl;
-                }
-                return 0;
-            }
-        </pre>
-        <p>
-            這個程式碼會先讓使用者輸入一個數字，然後判斷是否為質數。判斷質數的過程是，先將數字除以 2 到數字的平方根，如果有餘數，則為非質數。如果沒有餘數，則為質數。
-        </p>
-        <h3>2. 輸入一個數字，判斷是否為負數。</h3>
-        <p>
-            程式碼如下：
-        </p>
-        <pre>
-            #include &lt;iostream&gt;
-            using namespace std;
-            int main() {
-                int num;
-                cout << "Enter a number: ";
-                cin >> num;
-                if (num &lt; 0) {
-                    cout << num << " is a negative number." << endl;
-                } else {
-                    cout << num << " is not a negative number." << endl;
-                }
-                return 0;
-            }
-        </pre>
-        <p>
-            這個程式碼會先讓使用者輸入一個數字，然後判斷是否為負數。判斷負數的過程是，只要數字小於 0，就表示為負數。
-        </p>
-        <h3>3. 輸入一個數字，判斷是否為奇數。</h3>
-        <p>
-            程式碼如下：
-        </p>
-        <pre>
-            #include &lt;iostream&gt;
-            using namespace std;
-            int main() {
-                int num;
-                cout << "Enter a number: ";
-                cin >> num;
-                if (num % 2 == 1) {
-                    cout << num << " is an odd number." << endl;
-                } else {
-                    cout << num << " is an even number." << endl;
-                }
-                return 0;
-            }
-        </pre>
-        <p>
-            這個程式碼會先讓使用者輸入一個數字，然後判斷是否為奇數。判斷奇數的過程是，只要數字除以 2 餘 1，就表示為奇數。
-        </p>
-        <h3>4. 輸入兩個數字，計算其乘積。</h3>
-        <p>
-            程式碼如下：
-        </p>
-        <pre>
-            #include &lt;iostream&gt;
-            using namespace std;
-            int main() {
-                int num1, num2;
-                cout << "Enter two numbers: ";
-                cin >> num1 >> num2;
-                int product = num1 * num2;
-                cout << "The product of " << num1 << " and " << num2 << " is " << product << "." << endl;
-                return 0;
-            }
-        </pre>
-        <p>
-            這個程式碼會先讓使用者輸入兩個數字，然後計算其乘積。計算乘積的過程是，將兩個數字相乘。
-        </p>
-        <h3>5. 輸入一個數字，計算其平方根。</h3>
-        <p>
-            程式碼如下：
-        </p>
-        <pre>
-            #include &lt;iostream&gt;
-            #include &lt;cmath&gt;
-            using namespace std;
-            int main() {
-                int num;
-                cout << "Enter a number: ";
-                cin >> num;
-                double sqrt_num = sqrt(num);
-                cout << "The square root of " << num << " is " << sqrt_num << "." << endl;
-                return 0;
-            }
-        </pre>
-        <p>
-            這個程式碼會先讓使用者輸入一個數字，然後計算其平方根。計算平方根的過程是，使用 math.h 中的 sqrt() 函數。
-        </p>
-        <h3>6. 輸入一個數字，計算其立方根。</h3>
-        <p>
-            程式碼如下：
-        </p>
-        <pre>
-            #include &lt;iostream&gt;
-            #include &lt;cmath&gt;
-            using namespace std;
-            int main() {
-                int num;
-                cout << "Enter a number: ";
-                cin >> num;
-                double cube_root = cbrt(num);
-                cout << "The cube root of " << num << " is " << cube_root << "." << endl;
-                return 0;
-            }
-        </pre>
-        <p>
-            這個程式碼會先讓使用者輸入一個數字，然後計算其立方根。計算立方根的過程是，使用 math.h 中的 cbrt() 函數。
-        </p>
-        <h3>7. 輸入一個數字，計算其餘弦值。</h3>
-        <p>
-            程式碼如下：
-        </p>
-        <pre>
-            #include &lt;iostream&gt;
-            #include &lt;cmath&gt;
-            using namespace std;
-            int main() {
-                int num;
-                cout << "Enter a number: ";
-                cin >> num;
-                double cos_num = cos(num);
-                cout << "The cosine of " << num << " is " << cos_num << "." << endl;
-                return 0;
-            }
-        </pre>
-        <p>
-            這個程式碼會先讓使用者輸入一個數字，然後計算其餘弦值。計算餘弦值的過程是，使用 math.h 中的 cos() 函數。
-        </p>
-        <h3>8. 輸入一個數字，計算其正弦值。</h3>
-        <p>
-            程式碼如下：
-        </p>
-        <pre>
-            #include &lt;iostream&gt;
-            #include &lt;cmath&gt;
-            using namespace std;
-            int main() {
-                int num;
-                cout << "Enter a number: ";
-                cin >> num;
-                double sin_num = sin(num);
-                cout << "The sine of " << num << " is " << sin_num << "." << endl;
-                return 0;
-            }
-        </pre>
-        <p>
-            這個程式碼會先讓使用者輸入一個數字，然後計算其正弦值。計算正弦值的過程是，使用 math.h 中的 sin() 函數。
-        </p>
-        <h3>9. 輸入一個數字，計算其餘切值。</h3>
-        <p>
-            程式碼如下：
-        </p>
-        <pre>
-            #include &lt;iostream&gt;
-            #include &lt;cmath&gt;
-            using namespace std;
-            int main() {
-                int num;
-                cout << "Enter a number: ";
-                cin >> num;
-                double tan_num = tan(num);
-                cout << "The tangent of " << num << " is " << tan_num << "." << endl;
-                return 0;
-            }
-        </pre>
-        <p>
-            這個程式碼會先讓使用者輸入一個數字，然後計算其餘切值。計算餘切值的過程是，使用 math.h 中的 tan() 函數。
-        </p>
-        <h3>10. 輸入一個數字，計算其反正切值。</h3>
-        <p>
-            程式碼如下：
-        </p>
-        <pre>
-            #include &lt;iostream&gt;
-            #include &lt;cmath&gt;
-            using namespace std;
-            int main() {
-                int num;
-                cout << "Enter a number: ";
-                cin >> num;
-                double atan_num = atan(num);
-                cout << "The arctangent of " << num << " is " << atan_num << "." << endl;
-                return 0;
-            }
-        </pre>
-        <p>
-            這個程式碼會先讓使用者輸入一個數字，然後計算其反正切值。計算反正切值的過程是，使用 math.h 中的 atan() 函數。
-        </p>
-        <h3>11. 輸入一個數字，計算其餘割。</h3>
-        <p>
-            程式碼如下：
-        </p>
-        <pre>
-            #include &lt;iostream&gt;
-            #include &lt;cmath&gt;
-            using namespace std;
-            int main() {
-                int num1, num2;
-                cout << "Enter two numbers: ";
-                cin >> num1 >> num2;
-                int remainder = num1 % num2;
-                cout << num1 << " divided by " << num2 << " has a remainder of " << remainder << "." << endl;
-                return 0;
-            }
-        </pre>
-        <p>
-            這個程式碼會先讓使用者輸入兩個數字，然後計算其餘割。計算餘割的過程是，使用 % 運算子。
-        </p>
-        <h3>12. 輸入一個數字，計算其餘數。</h3>
-        <p>
-            程式碼如下：
-        </p>
-        <pre>
-            #include &lt;iostream&gt;
-            #include &lt;cmath&gt;
-            using namespace std;
-            int main() {
-                int num1, num2;
-                cout << "Enter two numbers: ";
-                cin >> num1 >> num2;
-                int quotient = num1 / num2;
-                cout << num1 << " divided by " << num2 << " has a quotient of " << quotient << "." << endl;
-                return 0;
-            }
-    </body>
-</html>   
+
+        <div class="card">
+            <h3>1. 輸入一個數字，判斷是否為質數。</h3>
+            <p>這個程式碼會先讓使用者輸入一個數字，然後判斷是否為質數。判斷質數的過程是，先將數字除以2到數字的平方根，如果有餘數，則為非質數。如果沒有餘數，則為質數。</p>
+            <pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int num;
+    cout &lt;&lt; "Enter a number: ";
+    cin &gt;&gt; num;
+    bool prime = true;
+    for (int i = 2; i &lt; num; i++) {
+        if (num % i == 0) {
+            prime = false;
+            break;
+        }
+    }
+    if (prime) {
+        cout &lt;&lt; num &lt;&lt; " is a prime number." &lt;&lt; endl;
+    } else {
+        cout &lt;&lt; num &lt;&lt; " is not a prime number." &lt;&lt; endl;
+    }
+    return 0;
+}
+            </pre>
+        </div>
+
+        <div class="card">
+            <h3>2. 輸入一個數字，判斷是否為負數。</h3>
+            <p>這個程式碼會先讓使用者輸入一個數字，然後判斷是否為負數。判斷負數的過程是，只要數字小於0，就表示為負數。</p>
+            <pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int num;
+    cout &lt;&lt; "Enter a number: ";
+    cin &gt;&gt; num;
+    if (num &lt; 0) {
+        cout &lt;&lt; num &lt;&lt; " is a negative number." &lt;&lt; endl;
+    } else {
+        cout &lt;&lt; num &lt;&lt; " is not a negative number." &lt;&lt; endl;
+    }
+    return 0;
+}
+            </pre>
+        </div>
+
+        <div class="card">
+            <h3>3. 輸入一個數字，判斷是否為奇數。</h3>
+            <p>這個程式碼會先讓使用者輸入一個數字，然後判斷是否為奇數。判斷奇數的過程是，只要數字除以2餘1，就表示為奇數。</p>
+            <pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int num;
+    cout &lt;&lt; "Enter a number: ";
+    cin &gt;&gt; num;
+    if (num % 2 == 1) {
+        cout &lt;&lt; num &lt;&lt; " is an odd number." &lt;&lt; endl;
+    } else {
+        cout &lt;&lt; num &lt;&lt; " is an even number." &lt;&lt; endl;
+    }
+    return 0;
+}
+            </pre>
+        </div>
+
+        <div class="card">
+            <h3>4. 輸入兩個數字，計算其乘積。</h3>
+            <p>這個程式碼會先讓使用者輸入兩個數字，然後計算其乘積。計算乘積的過程是，將兩個數字相乘。</p>
+            <pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int num1, num2;
+    cout &lt;&lt; "Enter two numbers: ";
+    cin &gt;&gt; num1 &gt;&gt; num2;
+    int product = num1 * num2;
+    cout &lt;&lt; "The product of " &lt;&lt; num1 &lt;&lt; " and " &lt;&lt; num2 &lt;&lt; " is " &lt;&lt; product &lt;&lt; "." &lt;&lt; endl;
+    return 0;
+}
+            </pre>
+        </div>
+
+        <div class="card">
+            <h3>5. 輸入一個數字，計算其平方根。</h3>
+            <p>這個程式碼會先讓使用者輸入一個數字，然後計算其平方根。計算平方根的過程是，使用cmath中的sqrt()函數。</p>
+            <pre>
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+using namespace std;
+
+int main() {
+    int num;
+    cout &lt;&lt; "Enter a number: ";
+    cin &gt;&gt; num;
+    double sqrt_num = sqrt(num);
+    cout &lt;&lt; "The square root of " &lt;&lt; num &lt;&lt; " is " &lt;&lt; sqrt_num &lt;&lt; "." &lt;&lt; endl;
+    return 0;
+}
+            </pre>
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; 2024 Sanxian C++解題. 保留所有權利.</p>
+            <p>
+                <a href="https://github.com/ban38">MY GitHub</a> |
+                <a href="https://www.instagram.com/11_taiyi/?hl=zh-tw">Follow IG @11.taiyi</a>
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>

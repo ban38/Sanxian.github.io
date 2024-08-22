@@ -1,227 +1,166 @@
-<!-- 保佑網站
-  
-                       _oo0oo_
-                      o8888888o
-                      88" . "88
-                      (| -_- |)
-                      0\  =  /0
-                    ___/`---'\___
-                  .' \\|     |// '.
-                 / \\|||  :  |||// \
-                / _||||| -:- |||||- \
-               |   | \\\  -  /// |   |
-               | \_|  ''\---/''  |_/ |
-               \  .-\__  '-'  ___/-. /
-             ___'. .'  /--.--\  `. .'___
-          ."" '<  `.___\_<|>_/___.' >' "".
-         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
-         \  \ `_.   \_ __\ /__ _/   .-` /  /
-     =====`-.____`.___ \_____/___.-`___.-'=====
-                       `=---='
-
-
-     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-               佛祖保佑         永無BUG
-
--->
 <!DOCTYPE html>
-<html>
+<html lang="zh-TW">
+
 <head>
-    <title>Sanxian website</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="三弦的程式設計心得分享網站。">
     <meta name="keywords" content="程式設計, 心得, 教學, 三弦, 網頁設計">
-    <link rel="shortcut icon" type="x-icon" href="dog.jpg"/> 
-    <style>  
-       
-        body {
-            background-color: #083149;
-            font-family: "futura-pt", sans-serif;
-            font-size: 16px;
-            line-height: 1.5;
+    <link rel="shortcut icon" type="x-icon" href="dog.jpg" />
+    <title>Sanxian website</title>
+    <style>
+        /* 重置默认样式 */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        h1, h2, h3,  li, a {
-            font-family: "futura-pt", sans-serif;
-        }
-        h1 {
-            color: rgb(16, 250, 230);
-            margin-left: 20px;
-            text-align: center;
-            font-size: 50px;
-        }
-        h2 {
-            color: rgb(16, 250, 230);
-            margin-left: 20px;
-            text-align: center;
-            font-size: 30px;
-        }
-        h3 {
-            color: rgb(16, 250, 230);
-            margin-left: 20px;
-            font-size: 30px;
-        }
-        a{
-            color:rgb(0, 0, 0)
 
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .wrapper {
-            position: relative;
-            margin: 0 auto;
-        }
-        .credits {
-            position: absolute;
-            right: 20px;
-            bottom: 25px;
-            font-size: 15px;
-            color: #fff;
-        }
-        .credits>* {
-            vertical-align: middle;
-            margin-left: 15px;
-        }
-        .credits a {
-            padding: 8px 10px;
-            color: #333;
-            border: 2px solid #aaa;
-            border-radius: 2px;
-            text-decoration: none;
-        }
-        .credits a:hover {
-            border-color: #06ffea;
-            color: #e26c0ace;
-        }
-        .grow {
-            transition: transform 0.5s ease;
-        }
-        .grow:checked {
-            transform: scale(1.2);
-        }
-        body{
+        body {
+            background-color: #083149;
             background-image: url('bg.gif');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
-        }
-        div.credits {
-            position: absolute;
-            right: 20px;
-            bottom: 25px;
-            font-size: 15px;
+            font-family: "Futura-pt", sans-serif;
             color: #fff;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
-        div.credits>* {
-            vertical-align: middle;
-            margin-left: 15px;
-        }
-        div.credits a {
-            padding: 8px 10px;
-            color: #333;
-            border: 2px solid #aaa;
-            border-radius: 2px;
-            text-decoration: none;
-        }
-        div.credits a:hover {
-            border-color: #06ffea;
-            color: #e26c0ace;
-        }
-        button {
-            border: none;
-            color: rgb(64, 75, 134);
-            padding: 16px 32px;
+
+        h1,
+        h2,
+        h3 {
             text-align: center;
-            text-decoration: none;
+            font-family: "Futura-pt", sans-serif;
+            margin: 20px 0;
+        }
+
+        h1 {
+            color: #10FAE6;
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: #10FAE6;
+            font-size: 28px;
+        }
+
+        h3 {
+            color: #10FAE6;
+            font-size: 24px;
+            margin-left: 20px;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background-color: #10FAE6;
+            margin: 20px 0;
+        }
+
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .button {
+            background-color: #10FAE6;
+            color: #083149;
+            border: 2px solid #10FAE6;
+            padding: 12px 24px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
             display: inline-block;
-            font-size: 25px;
-            margin: 4px 2px;
-            transition-duration: 0.4s;
-            
-          }
-          .button1 {
-            background-color: rgb(47, 56, 104);
-            color: black;
-            border: 2px solid #008CBA;
-          }
-          
-          .button1:hover {
-            background-color: #008CBA;
-            color:  rgb(47, 56, 104);
-          }
-          .button2 {
-            background-color: rgb(47, 56, 104);
-            color: black;
-            border: 2px solid #008CBA;
-          }
-          
-          .button2:hover {
-            background-color: #008CBA;
-            color:  rgb(47, 56, 104);
-          }
-          .button3 {
-            background-color: rgb(47, 56, 104);
-            color: black;
-            border: 2px solid #008CBA;
-          }
-          
-          .button3:hover {
-            background-color: #008CBA;
-            color:  rgb(47, 56, 104);
-          }
-          .button4 {
-            background-color: rgb(47, 56, 104);
-            color: black;
-            border: 2px solid #008CBA;
-          }
-          
-          .button4:hover {
-            background-color: #008CBA;
-            color:  rgb(47, 56, 104);
-          }
-          .button5 {
-            background-color: rgb(47, 56, 104);
-            color: black;
-            border: 2px solid #008CBA;
-          }
-          
-          .button5:hover {
-            background-color: #008CBA;
-            color:  rgb(47, 56, 104);
-          }
-          .button6 {
-            background-color: rgb(47, 56, 104);
-            color: black;
-            border: 2px solid #008CBA;
-          }
-          
-          .button6:hover {
-            background-color: #008CBA;
-            color:  rgb(47, 56, 104);
-          }
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #083149;
+            color: #10FAE6;
+        }
+
+        .credits {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 16px;
+        }
+
+        .credits a {
+            color: #10FAE6;
+            background-color: #083149;
+            padding: 10px 15px;
+            margin: 0 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .credits a:hover {
+            background-color: #10FAE6;
+            color: #083149;
+            border: 2px solid #10FAE6;
+        }
+
+        /* Responsive adjustments for smaller devices */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .button {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .button {
+                font-size: 14px;
+                padding: 8px 16px;
+                margin: 5px;
+            }
+
+            .credits a {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+        }
     </style>
-     
 </head>
+
 <body>
     <h1>Sanxian website</h1>
     <h2>程式資安 正在學習中ing...</h2>
-    <hr>
-    <button class="button1"><a href="home.html">首頁</a></button>
-    <button class="button2"><a href="self.html">關於我</a></button>
-    <button class="button3"><a href="C++.html">C++解題</a></button>
-    <button class="button4"><a href="skills.html">技能</a></button>
-    <button class="button5"><a href="contact.html">聯絡我</a></button>
-    <button class="button6"><a href="works.html">作品集</a></button>
-
-    <div class="wrapper" id="gridWrapper"></div>
-	<div class="credits">
+    <div class="button-container">
+        <a href="home.html" class="button">首頁</a>
+        <a href="self.html" class="button">關於我</a>
+        <a href="C++.html" class="button">C++解題</a>
+        <a href="skills.html" class="button">技能</a>
+        <a href="contact.html" class="button">聯絡我</a>
+        <a href="works.html" class="button">作品集</a>
+    </div>
+    <div class="credits">
         <a href="https://github.com/ban38">MY GitHub</a>
         <a href="https://www.instagram.com/11_taiyi/?hl=zh-tw">Follow IG @11.taiyi</a>
     </div>
-
 </body>
+
 </html>

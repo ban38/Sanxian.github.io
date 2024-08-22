@@ -1,70 +1,120 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>works</title>
-
-        <meta charset="UTF-8">
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" type="x-icon" href="dog.jpg"/>
-
-        
-    </head>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品集</title>
+    <link rel="shortcut icon" type="image/x-icon" href="dog.jpg"/>
     <style>
         body {
             background-color: #083149;
-            font-family: "futura-pt", sans-serif;
-            font-size: 16px;
-            line-height: 1.5;
-            margin: 0;
-            padding: 0;
-        }
-        h3,h1 {
-            color: rgb(211, 211, 224);
-            margin-left: 10px;
-            font-size: 20px;
-        }
-        p, li {
-            color: rgb(255, 255, 255);
-            margin-left: 20px;
-            text-align: center;
-            font-size: 20px;
-            list-style-type: none;
-            font-family: "futura-pt", sans-serif;
-        }
-        a {
-            color: rgb(255, 255, 255);
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        body{
             background-image: url('bg.gif');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
+            font-family: "futura-pt", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #d3d3e0;
+            line-height: 1.5;
         }
-        li {
-            color: rgb(24, 186, 192);
-            margin-left: 20px;
+
+        header {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px 0;
             text-align: center;
-            font-size: 30px;
-            list-style-type: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
-        a {
-            color: rgb(17, 13, 56);
+
+        nav {
+            margin: 0 auto;
+            display: inline-block;
+        }
+
+        nav a {
+            color: #fff;
             text-decoration: none;
+            font-size: 18px;
+            margin: 0 15px;
+            padding: 10px 20px;
+            background-color: #18bac0;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
-        a:hover {
-            text-decoration: underline;
+
+        nav a:hover {
+            background-color: #137a84;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-top: 50px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        section {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            section {
+                margin: 20px;
+            }
         }
     </style>
-    <body>
-        <p>
-            <a href="home.html">首頁</a> || <a href="self.html">自介</a>  ||  <a href="C++.html">C++解題</a> || <a href="skills.html">技能</a> || <a href="works.html">作品集</a> || <a href="contact.html">聯絡</a>
-        </p>
-        <hr>
-        <h1>作品集</h1>
-    </body>
-</html>   
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="home.html">首頁</a>
+        <a href="self.html">自介</a>
+        <a href="C++.html">C++解題</a>
+        <a href="skills.html">技能</a>
+        <a href="works.html">作品集</a>
+        <a href="contact.html">聯絡</a>
+    </nav>
+</header>
+
+<main>
+    <h1>作品集</h1>
+
+    <section>
+        <h3>歡迎瀏覽我的作品集！</h3>
+        <p>這裡展示了我各種項目的匯集，從程式設計到設計技能，這裡都涵蓋了。</p>
+    </section>
+</main>
+
+<footer>
+    &copy; 2024 胡鑠沅Sanxian | 聯絡: a0973369873@gmail.com
+</footer>
+
+</body>
+</html>
