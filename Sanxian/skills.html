@@ -36,9 +36,21 @@
 
         nav {
             display: inline-block;
+            position: relative;
         }
 
-        nav a {
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            position: relative;
+        }
+
+        nav ul li a {
             color: #f4d35e;
             background-color: transparent;
             border: 2px solid #f4d35e;
@@ -48,12 +60,38 @@
             padding: 10px 18px;
             border-radius: 30px;
             transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+            display: block;
         }
 
-        nav a:hover {
+        nav ul li a:hover {
             background-color: #f4d35e;
             color: #0d3b66;
             transform: translateY(-3px);
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 0;
+            border-radius: 10px;
+        }
+
+        nav ul li ul li {
+            display: block;
+            margin: 0;
+        }
+
+        nav ul li ul li a {
+            margin: 0;
+            border: none;
+            border-radius: 0;
+        }
+
+        nav ul li:hover ul {
+            display: block;
         }
 
         .content {
@@ -94,7 +132,8 @@
             margin-bottom: 15px;
         }
 
-        p, li {
+        p,
+        li {
             font-size: 18px;
             color: #f0f0f0;
             margin-bottom: 20px;
@@ -160,7 +199,19 @@
 <body>
     <header>
         <nav>
-            <a href="home.html">首頁</a><a href="self.html">自介</a><a href="C++.html">C++解題</a><a href="skills.html">技能</a><a href="works.html">作品集</a><a href="contact.html">聯絡</a>
+            <ul>
+                <li><a href="home.html">首頁</a></li>
+                <li>
+                    <a href="#">更多選項</a>
+                    <ul>
+                        <li><a href="self.html">自介</a></li>
+                        <li><a href="C++.html">C++解題</a></li>
+                        <li><a href="skills.html">技能</a></li>
+                        <li><a href="works.html">作品集</a></li>
+                        <li><a href="contact.html">聯絡</a></li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
     </header>
 
