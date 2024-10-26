@@ -29,9 +29,7 @@
             padding: 0;
         }
 
-        h1,
-        h2,
-        h3 {
+        h1,h2,h3 {
             text-align: center;
             font-family: "Futura-pt", sans-serif;
             margin: 20px 0;
@@ -108,39 +106,15 @@
         }
 
         /* Responsive adjustments for smaller devices */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 36px;
-            }
-
-            h2 {
-                font-size: 24px;
-            }
-
-            .button {
-                font-size: 16px;
-                padding: 10px 20px;
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
             }
         }
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 28px;
-            }
-
-            h2 {
-                font-size: 20px;
-            }
-
-            .button {
-                font-size: 14px;
-                padding: 8px 16px;
-                margin: 5px;
-            }
-
-            .credits a {
-                font-size: 14px;
-                padding: 8px 12px;
+        @media (min-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr 1fr 1fr;
             }
         }
     </style>

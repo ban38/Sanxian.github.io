@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="響應式網站範例">
+    <title>響應式網站範例</title>
+    <style>
+        /* 重置樣式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 標頭區 */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        /* 導覽列 */
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #444;
+        }
+
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        /* 主要內容區 */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .content {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* RWD調整 */
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        /* 版權資訊區 */
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 標頭 -->
+    <header>
+        <h1>我的響應式網站</h1>
+    </header>
+
+    <!-- 導覽列 -->
+    <nav>
+        <a href="#home">首頁</a>
+        <a href="#about">關於</a>
+        <a href="#services">服務</a>
+        <a href="#contact">聯絡我們</a>
+    </nav>
+
+    <!-- 內容區域 -->
+    <div class="container">
+        <div class="content" id="home">
+            <h2>首頁</h2>
+            <p>這裡是首頁內容的介紹部分。</p>
+        </div>
+        <div class="content" id="about">
+            <h2>關於</h2>
+            <p>這裡是關於我們的介紹部分。</p>
+        </div>
+        <div class="content" id="services">
+            <h2>服務</h2>
+            <p>這裡是我們提供的服務的介紹部分。</p>
+        </div>
+        <div class="content" id="contact">
+            <h2>聯絡我們</h2>
+            <p>這裡是聯絡方式的介紹部分。</p>
+        </div>
+    </div>
+
+    <!-- 版權資訊 -->
+    <footer>
+        <p>&copy; 2024 我的網站. 版權所有.</p>
+    </footer>
+</body>
+
+</html>

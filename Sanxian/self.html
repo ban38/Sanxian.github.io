@@ -74,25 +74,27 @@
             margin-bottom: 50px;
             text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
         }
+
+        /* 橫向呈現 */
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
         img {
-            max-width: 200px;
+            max-width: 100%;
+            width: 400px;
             height: auto;
-            border-radius: 50%;
+            border-radius: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            margin: 20px 0;
         }
 
-        .card {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
-            margin-bottom: 40px;
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
+        .text-content {
+            max-width: 500px;
         }
 
         h3 {
@@ -101,27 +103,11 @@
             line-height: 1.6;
             margin-bottom: 20px;
         }
-        
 
         p, li {
             font-size: 18px;
             color: #f0f0f0;
             margin-bottom: 20px;
-        }
-
-        pre {
-            background-color: #051b2b;
-            padding: 20px;
-            border-radius: 10px;
-            font-size: 16px;
-            color: #eaeaea;
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
-            overflow-x: auto;
-        }
-
-        hr {
-            border: 1px solid #f4d35e;
-            margin: 50px 0;
         }
 
         footer {
@@ -145,22 +131,13 @@
             color: #fff;
         }
 
-        @media screen and (max-width: 768px) {
-            h1 {
-                font-size: 2.2em;
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
             }
-
-            nav a {
-                display: block;
-                margin: 10px 0;
-            }
-
-            .content {
-                margin: 20px;
-            }
-
-            .card {
-                margin-bottom: 30px;
+            img {
+                width: 100%;
+                max-width: 300px;
             }
         }
     </style>
@@ -169,7 +146,12 @@
 <body>
     <header>
         <nav>
-            <a href="home.html">首頁</a><a href="self.html">自介</a><a href="C++.html">C++解題</a><a href="skills.html">技能</a><a href="works.html">作品集</a><a href="contact.html">聯絡</a>
+            <a href="home.html">首頁</a>
+            <a href="self.html">自介</a>
+            <a href="C++.html">C++解題</a>
+            <a href="skills.html">技能</a>
+            <a href="works.html">作品集</a>
+            <a href="contact.html">聯絡</a>
         </nav>
     </header>
 
@@ -177,16 +159,13 @@
         <h1>自介</h1>
         <div class="container">
             <img src="de.jpg" alt="自介圖片">
-            
-            <div class="content">
+            <div class="text-content">
                 <h3>高一開始接觸程式設計這個領域，對還是小白的我來說，根本是跳脫一個層次。一開始學程式時，我只是照著課本打出第一個程式，Hello world！</h3>
                 <h3>當時我還不知道它的運行方式是甚麼。經過二個學期的磨練，我竟然開始教別人認識程式以及學習進階的語法。</h3>
                 <h3>我也認識到自己在理解題目方面的能力不足，因此我會主動找一些題目來學習，並且會分享自己的程式設計心得。</h3>
                 <h3>設計這個網頁是為了讓自己能往更好的方向發展，希望能藉由分享程式設計的心得，讓更多人能學習到相關技巧，並且成為更好的工程師。</h3>
             </div>
         </div>
-
-        <!-- 其他卡片 -->
     </main>
 
     <footer>
